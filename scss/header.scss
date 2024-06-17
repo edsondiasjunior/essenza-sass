@@ -1,0 +1,131 @@
+header {
+  width: 100%;
+  background-color: $verde;
+  height: 80px;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin: auto;
+    width: 90%;
+
+    #btn-mobile {
+      display: none;
+      color: $branco;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+
+      #hamburguer2 {
+        width: 32px;
+        height: 2px;
+        border-top: 2px solid;
+        transition: 0.2s ease;
+      }
+      #hamburguer2.active2 {
+        rotate: -135deg;
+        position: absolute;
+        // top: -7px;
+      }
+
+      #hamburguer3 {
+        width: 32px;
+        height: 2px;
+        border-top: 2px solid;
+        transition: 0.2s ease;
+      }
+      #hamburguer3.active3 {
+        display: none;
+      }
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+
+      #hamburguer {
+        width: 32px;
+        height: 2px;
+        border-top: 2px solid;
+        transition: 0.3s ease;
+      }
+      .x1 {
+        rotate: 135deg;
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+
+      @include tablet {
+        display: none;
+        height: 0px;
+        visibility: hidden;
+      }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .menu-item {
+          list-style-type: none;
+
+          a {
+            color: $branco;
+            text-decoration: none;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: $branco;
+              height: 2px;
+              width: 0;
+              left: 0;
+              bottom: -6px;
+              transition: width 0.5s;
+            }
+          }
+          a:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    #nav.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 80px;
+      right: 0;
+      height: calc(100vh - 80px);
+      background-color: $verde;
+      visibility: visible;
+      .btn {
+        width: 300px;
+        height: 60px;
+        margin-left: 5%;
+      }
+      .menu {
+        flex-direction: column;
+        align-items: start;
+        margin: 5% 0 0 5%;
+        .menu-item {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

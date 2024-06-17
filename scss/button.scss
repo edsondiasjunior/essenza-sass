@@ -1,0 +1,38 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+  background: transparent linear-gradient(90deg, #927b4f 0%, #ddc28f 100%);
+  cursor: pointer;
+
+  a {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $branco;
+    transition: color 0.5s ease;
+  }
+  svg {
+    transition: rotate 0.5s ease;
+  }
+  path {
+    fill: $branco;
+    transition: fill 0.5s ease;
+  }
+}
+
+.btn:hover {
+  a {
+    color: $verde;
+  }
+
+  svg {
+    rotate: -30deg;
+
+    path {
+      fill: $verde;
+    }
+  }
+}
